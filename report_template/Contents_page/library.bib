@@ -1,0 +1,197 @@
+@article{Khattab2022,
+   abstract = {Retrieval-augmented in-context learning has emerged as a powerful approach for addressing knowledge-intensive tasks using frozen language models (LM) and retrieval models (RM). Existing work has combined these in simple "retrieve-then-read" pipelines in which the RM retrieves passages that are inserted into the LM prompt. To begin to fully realize the potential of frozen LMs and RMs, we propose Demonstrate-Search-Predict (DSP), a framework that relies on passing natural language texts in sophisticated pipelines between an LM and an RM. DSP can express high-level programs that bootstrap pipeline-aware demonstrations, search for relevant passages, and generate grounded predictions, systematically breaking down problems into small transformations that the LM and RM can handle more reliably. We have written novel DSP programs for answering questions in open-domain, multi-hop, and conversational settings, establishing in early evaluations new state-of-the-art in-context learning results and delivering 37-120%, 8-39%, and 80-290% relative gains against the vanilla LM (GPT-3.5), a standard retrieve-then-read pipeline, and a contemporaneous self-ask pipeline, respectively. We release DSP at https://github.com/stanfordnlp/dsp},
+   author = {Omar Khattab and Keshav Santhanam and Xiang Lisa Li and David Hall and Percy Liang and Christopher Potts and Matei Zaharia},
+   month = {12},
+   title = {Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive NLP},
+   url = {http://arxiv.org/abs/2212.14024},
+   year = {2022},
+}
+@article{Lewis2020,
+   abstract = {Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, but have so far been only investigated for extractive downstream tasks. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, the other can use different passages per token. We fine-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state-of-the-art on three open domain QA tasks, outperforming parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.},
+   author = {Patrick Lewis and Ethan Perez and Aleksandra Piktus and Fabio Petroni and Vladimir Karpukhin and Naman Goyal and Heinrich Küttler and Mike Lewis and Wen-tau Yih and Tim Rocktäschel and Sebastian Riedel and Douwe Kiela},
+   month = {5},
+   title = {Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks},
+   url = {http://arxiv.org/abs/2005.11401},
+   year = {2020},
+}
+@article{Vaswani2017,
+   abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.},
+   author = {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin},
+   month = {6},
+   title = {Attention Is All You Need},
+   url = {http://arxiv.org/abs/1706.03762},
+   year = {2017},
+}
+@article{Zha2023,
+   abstract = {The role of data in building AI systems has recently been significantly magnified by the emerging concept of data-centric AI (DCAI), which advocates a fundamental shift from model advancements to ensuring data quality and reliability. Although our community has continuously invested efforts into enhancing data in different aspects, they are often isolated initiatives on specific tasks. To facilitate the collective initiative in our community and push forward DCAI, we draw a big picture and bring together three general missions: training data development, inference data development, and data maintenance. We provide a top-level discussion on representative DCAI tasks and share perspectives. Finally, we list open challenges. More resources are summarized at https://github.com/daochenzha/data-centric-AI},
+   author = {Daochen Zha and Zaid Pervaiz Bhat and Kwei-Herng Lai and Fan Yang and Xia Hu},
+   month = {1},
+   title = {Data-centric AI: Perspectives and Challenges},
+   url = {http://arxiv.org/abs/2301.04819},
+   year = {2023},
+}
+@article{Khattab2023,
+   author = {Omar Khattab and Arnav Singhvi and Paridhi Maheshwari and Zhiyuan Zhang and Keshav Santhanam and Sri Vardhamanan and Saiful Haq and Ashutosh Sharma and Thomas T. Joshi and Hanna Moazam and Heather Miller and Matei Zaharia and Christopher Potts},
+   month = {10},
+   title = {DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines},
+   url = {http://arxiv.org/abs/2310.03714},
+   year = {2023},
+}
+@article{Mehrabi2019,
+   abstract = {With the widespread use of AI systems and applications in our everyday lives, it is important to take fairness issues into consideration while designing and engineering these types of systems. Such systems can be used in many sensitive environments to make important and life-changing decisions; thus, it is crucial to ensure that the decisions do not reflect discriminatory behavior toward certain groups or populations. We have recently seen work in machine learning, natural language processing, and deep learning that addresses such challenges in different subdomains. With the commercialization of these systems, researchers are becoming aware of the biases that these applications can contain and have attempted to address them. In this survey we investigated different real-world applications that have shown biases in various ways, and we listed different sources of biases that can affect AI applications. We then created a taxonomy for fairness definitions that machine learning researchers have defined in order to avoid the existing bias in AI systems. In addition to that, we examined different domains and subdomains in AI showing what researchers have observed with regard to unfair outcomes in the state-of-the-art methods and how they have tried to address them. There are still many future directions and solutions that can be taken to mitigate the problem of bias in AI systems. We are hoping that this survey will motivate researchers to tackle these issues in the near future by observing existing work in their respective fields.},
+   author = {Ninareh Mehrabi and Fred Morstatter and Nripsuta Saxena and Kristina Lerman and Aram Galstyan},
+   month = {8},
+   title = {A Survey on Bias and Fairness in Machine Learning},
+   url = {http://arxiv.org/abs/1908.09635},
+   year = {2019},
+}
+@article{Khattab2021,
+   abstract = {Multi-hop reasoning (i.e., reasoning across two or more documents) is a key ingredient for NLP models that leverage large corpora to exhibit broad knowledge. To retrieve evidence passages, multi-hop models must contend with a fast-growing search space across the hops, represent complex queries that combine multiple information needs, and resolve ambiguity about the best order in which to hop between training passages. We tackle these problems via Baleen, a system that improves the accuracy of multi-hop retrieval while learning robustly from weak training signals in the many-hop setting. To tame the search space, we propose condensed retrieval, a pipeline that summarizes the retrieved passages after each hop into a single compact context. To model complex queries, we introduce a focused late interaction retriever that allows different parts of the same query representation to match disparate relevant passages. Lastly, to infer the hopping dependencies among unordered training passages, we devise latent hop ordering, a weak-supervision strategy in which the trained retriever itself selects the sequence of hops. We evaluate Baleen on retrieval for two-hop question answering and many-hop claim verification, establishing state-of-the-art performance.},
+   author = {Omar Khattab and Christopher Potts and Matei Zaharia},
+   month = {1},
+   title = {Baleen: Robust Multi-Hop Reasoning at Scale via Condensed Retrieval},
+   url = {http://arxiv.org/abs/2101.00436},
+   year = {2021},
+}
+@inproceedings{
+pourreza2023dinsql,
+title={{DIN}-{SQL}: Decomposed In-Context Learning of Text-to-{SQL} with Self-Correction},
+author={Mohammadreza Pourreza and Davood Rafiei},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=p53QDxSIc5}
+}
+@article{luyu2023,
+   abstract = {Language models (LMs) now excel at many tasks such as question answering, reasoning, and dialog. However, they sometimes generate unsupported or misleading content. A user cannot easily determine whether their outputs are trustworthy or not, because most LMs do not have any built-in mechanism for attribu-tion to external evidence. To enable attribution while still preserving all the powerful advantages of recent generation models, we propose RARR (Retrofit Attribution using Research and Revision), a system that 1) automatically finds attribution for the output of any text generation model, and 2) post-edits the output to fix unsupported content while preserving the original output as much as possible. When applied to the output of several state-of-the-art LMs on a diverse set of generation tasks, we find that RARR significantly improves attribution while otherwise preserving the original input to a much greater degree than previously explored edit models. Furthermore, the implementation of RARR requires only a handful of training examples , a large language model, and standard web search. 1},
+   author = {Luyu Gao and Zhuyun Dai and Panupong Pasupat and Anthony Chen and Arun Tejasvi Chaganty and Yicheng Fan and Vincent Y Zhao and Ni Lao and Hongrae Lee and Da-Cheng Juan and Kelvin Guu},
+   pages = {16477-16508},
+   publisher = {Long Papers},
+   title = {RARR: Researching and Revising What Language Models Say, Using Language Models},
+   volume = {1},
+}
+@article{Collobert2002,
+author = {Collobert, Ronan and Bengio, Samy and Marithoz, Johnny},
+year = {2002},
+month = {11},
+pages = {},
+title = {Torch: A Modular Machine Learning Software Library}
+}
+@InProceedings{ bergstra-proc-scipy-2010,
+  author    = { {J}ames {B}ergstra and {O}livier {B}reuleux and {F}r\'ed\'eric {B}astien and {P}ascal {L}amblin and {R}azvan {P}ascanu and {G}uillaume {D}esjardins and {J}oseph {T}urian and {D}avid {W}arde-{F}arley and {Y}oshua {B}engio },
+  title     = { {T}heano: {A} {C}{P}{U} and {G}{P}{U} {M}ath {C}ompiler in {P}ython },
+  booktitle = { {P}roceedings of the 9th {P}ython in {S}cience {C}onference },
+  pages     = { 18 - 24 },
+  year      = { 2010 },
+  editor    = { {S}t\'efan van der {W}alt and {J}arrod {M}illman },
+  doi       = { 10.25080/Majora-92bf1922-003 }
+}
+@misc{chainer2015,
+   abstract = {Software frameworks for neural networks play key roles in the development and application of deep learning methods. However, as new types of deep learning models are developed, existing frameworks designed for convolutional neural networks are becoming less useful. In this paper, we introduce Chainer, a Python-based, standalone open source framework for deep learning models. Chainer provides a flexible, intuitive, and high performance means of implementing a full range of deep learning models, including state-of-the-art models such as recurrent neural networks and variational autoencoders.},
+   author = {Seiya Tokui and Kenta Oono and Shohei Hido and Justin Clayton},
+   title = {Chainer: a Next-Generation Open Source Framework for Deep Learning},
+}
+@misc{ouyang2022training,
+      title={Training language models to follow instructions with human feedback}, 
+      author={Long Ouyang and Jeff Wu and Xu Jiang and Diogo Almeida and Carroll L. Wainwright and Pamela Mishkin and Chong Zhang and Sandhini Agarwal and Katarina Slama and Alex Ray and John Schulman and Jacob Hilton and Fraser Kelton and Luke Miller and Maddie Simens and Amanda Askell and Peter Welinder and Paul Christiano and Jan Leike and Ryan Lowe},
+      year={2022},
+      eprint={2203.02155},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{ratner2017data,
+      title={Data Programming: Creating Large Training Sets, Quickly}, 
+      author={Alexander Ratner and Christopher De Sa and Sen Wu and Daniel Selsam and Christopher Ré},
+      year={2017},
+      eprint={1605.07723},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML}
+}
+@misc{hancock2018training,
+      title={Training Classifiers with Natural Language Explanations}, 
+      author={Braden Hancock and Paroma Varma and Stephanie Wang and Martin Bringmann and Percy Liang and Christopher Ré},
+      year={2018},
+      eprint={1805.03818},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{wang2023selfconsistency,
+      title={Self-Consistency Improves Chain of Thought Reasoning in Language Models}, 
+      author={Xuezhi Wang and Jason Wei and Dale Schuurmans and Quoc Le and Ed Chi and Sharan Narang and Aakanksha Chowdhery and Denny Zhou},
+      year={2023},
+      eprint={2203.11171},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{zhang2022automatic,
+      title={Automatic Chain of Thought Prompting in Large Language Models}, 
+      author={Zhuosheng Zhang and Aston Zhang and Mu Li and Alex Smola},
+      year={2022},
+      eprint={2210.03493},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{shao2023synthetic,
+      title={Synthetic Prompting: Generating Chain-of-Thought Demonstrations for Large Language Models}, 
+      author={Zhihong Shao and Yeyun Gong and Yelong Shen and Minlie Huang and Nan Duan and Weizhu Chen},
+      year={2023},
+      eprint={2302.00618},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{chase22,
+    author = {Harrison Chase},
+    title = {LangChain},
+    url = {https://github.com/langchain-ai/langchain},
+    year = 2022
+}
+@misc{microsoft2023,
+    author = {Microsoft Semantic kernel},
+    title = {Microsoft Semantic kernel},
+    url = {https://learn.microsoft.com/semantic-kernel/},
+    year = 2023
+}
+
+@misc{llama2022,
+    author = {Jerry Liu},
+    title = {LlamaIndex},
+    url = {https://github.com/jerryjliu/llama_index},
+    year = 2022
+}
+@misc{gpt4,
+    author = {OpenAI},
+    title = {OpenAI},
+    url = {https://openai.com/},
+    year = 2023
+}
+@misc{izacard2022atlas,
+      title={Atlas: Few-shot Learning with Retrieval Augmented Language Models}, 
+      author={Gautier Izacard and Patrick Lewis and Maria Lomeli and Lucas Hosseini and Fabio Petroni and Timo Schick and Jane Dwivedi-Yu and Armand Joulin and Sebastian Riedel and Edouard Grave},
+      year={2022},
+      eprint={2208.03299},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{guo2023connecting,
+      title={Connecting Large Language Models with Evolutionary Algorithms Yields Powerful Prompt Optimizers}, 
+      author={Qingyan Guo and Rui Wang and Junliang Guo and Bei Li and Kaitao Song and Xu Tan and Guoqing Liu and Jiang Bian and Yujiu Yang},
+      year={2023},
+      eprint={2309.08532},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{pryzant2023automatic,
+      title={Automatic Prompt Optimization with "Gradient Descent" and Beam Search}, 
+      author={Reid Pryzant and Dan Iter and Jerry Li and Yin Tat Lee and Chenguang Zhu and Michael Zeng},
+      year={2023},
+      eprint={2305.03495},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@misc{huang2022large,
+      title={Large Language Models Can Self-Improve}, 
+      author={Jiaxin Huang and Shixiang Shane Gu and Le Hou and Yuexin Wu and Xuezhi Wang and Hongkun Yu and Jiawei Han},
+      year={2022},
+      eprint={2210.11610},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}

@@ -1,0 +1,200 @@
+\chapter{Research Methodology}
+
+\section{Research Introduction}
+The landscape of AI development is constantly evolving, with Language Models (LMs) playing an increasingly central role in building intelligent systems. LMs hold immense potential for building intelligent systems, but their true power lies beyond simple fine-tuning with static prompts. While prompts play a crucial role in guiding LM outputs, their rigidity, dependence on expert knowledge, and inability to adapt to new contexts limit their effectiveness. This exploration delves into two key approaches to unlock the full potential of LMs: \textbf{adaptation techniques and stacking techniques}. We will also examine how a powerful framework like DSPy helps overcome the limitations of handcrafted prompts, leading to more dynamic and flexible LM systems.\\
+\\
+\textbf{Adaptation Techniques for Dynamic Responses:} Adaptation techniques aim to make LMs more responsive to their environment, going beyond pre-defined prompts. Here's how few of the approaches mitigate the limitations:
+\begin{itemize}
+    \item \textbf{Chain of Thought (CoT):} Instead of a single, rigid prompt, CoT breaks down complex tasks into smaller, sequential steps. Each step uses a tailored prompt, reducing complexity and allowing context-aware reasoning by building upon previous outputs.
+
+    \item \textbf{RAG (Retrieval-Augmented Generation):} Instead of relying solely on the prompt for information, RAG leverages external knowledge sources like databases. This reduces the need for comprehensive prompts and enhances factual grounding by guiding the LM towards relevant information.
+
+    \item \textbf{ReAct Agents:} These agents continuously learn from prompts, feedback, and interactions. Over time, they refine their responses to specific situations and user preferences, minimizing the need for manual prompt adjustments for each interaction.
+
+    \item \textbf{Program of Thought (PoT):} Similar to CoT, PoT uses a structured approach with multiple prompts. Instead of a single prompt for the entire task, each step in the program has its own prompt, allowing for customization and adaptation to specific subtasks.
+\end{itemize}
+While these techniques still require some initial prompt engineering, they significantly reduce reliance on static prompts by:
+\begin{itemize}
+    \item Breaking down complex tasks into smaller, modular prompts.
+    \item Incorporating context and feedback into the prompting process.
+    \item Enabling continuous learning and adaptation through interaction.
+\end{itemize}
+\\
+\textbf{Stacking LMs for Enhanced Capabilities:} Stacking involves combining multiple LMs into multi-stage pipelines, each specializing in a particular task. This allows us to build more powerful and versatile systems, as showcased by:
+
+\begin{itemize}
+
+ \item \textbf{DIN-SQL (Decomposed In-Context Learning of Text-to-SQL):} This work by \parencite{pourreza2023dinsql} employs a cascaded model where one LM identifies relevant entities in a text, and another uses those entities to generate the corresponding SQL query. It demonstrates the power of stacking LMs for complex tasks, even with potentially hand-crafted prompts for each stage.
+
+ \item \textbf{RARR (Researching and Revising What Language Models Say, Using Language Models):} \parencite{luyu2023} proposed a system utilizes an ensemble approach where multiple LMs generate responses, followed by another LM that combines and revises them to ensure factual accuracy and consistency. This highlights the benefits of leveraging diversity and potentially using prompts within each step of the stack.
+
+ \item \textbf{Baleen (Robust Multi-Hop Reasoning at Scale via Condensed Retrieval):} This work by \parencite{Khattab2021} employs hierarchical retrieval and reasoning to answer complex questions, demonstrating the potential of using multiple retrieval and reasoning steps within a stacked architecture. While prompts might be used to guide each step, the multi-hop approach allows for more nuanced and dynamic responses.
+\end{itemize}
+\\
+With background of how adaptation techniques like CoT, RAG, ReAct Agents, and PoT, and stacking techniques like DIN-SQL, RARR, and Baleen unlock potential beyond static prompts. While powerful, these approaches still require some level of handcrafted prompts, leading to\\
+\\
+\textbf{Challenges with Handcrafted Prompts:}
+We have seen how traditional approaches to building engaging AI agents rely heavily on handcrafted prompts, which suffer from:
+\begin{itemize}
+    \item \textbf{Limited modularity:} Though conceptually modular, prompt-based pipelines can be brittle in practice. LMs are sensitive to prompt changes, making them difficult to use in flexible pipelines.
+
+    \item \textbf{Scalability bottleneck:} Relying on handcrafted prompts for each task and context is unsustainable, especially as data sources and user needs evolve.
+
+    \item \textbf{Maintenance burden:} Constant tweaking of prompts for new data or tasks is time-consuming and error-prone.
+\end{itemize}
+\\
+\textbf{DSPy, A Paradigm Shift}:
+DSPy emerges as a game-changer, introducing a modular and adaptive approach that shifts the focus from prompting to programming. Here's how:
+\begin{itemize}
+    \item \textbf{Signatures replace prompts:} Instead of string-based prompts, DSPy uses signatures, which define the desired outcome and input data type, allowing for more flexible and reusable components.
+
+    \item \textbf{Modules replace prompting techniques & chains:} DSPy offers pre-built modules encapsulating specific functionalities, replacing the need for complex prompt chains and custom prompt engineering.
+
+    \item \textbf{Optimizers replace manual prompting:} DSPy employs powerful optimizers that automatically adjust the system based on user feedback and performance metrics, eliminating the need for manual prompt tweaking.
+\end{itemize}
+\\
+\textbf{Benefits of DSPy:}
+\begin{itemize}
+    \item \textbf{Enhanced modularity:} Modules can be easily combined and reused, creating adaptable pipelines that seamlessly integrate with new data and tasks.
+
+    \item \textbf{Improved scalability:} By automating prompt adjustments and leveraging pre-built modules, DSPy scales readily to handle diverse use cases and data sources.
+    
+    \item \textbf{Reduced maintenance burden:} The optimizer takes care of fine-tuning, freeing developers to focus on system design and innovation.
+\end{itemize}
+\\
+\textbf{DSPy in Action:} Imagine building a news summarization pipeline. With DSPy, you wouldn't need to handcraft prompts for each news article. Instead, you'd use modules like a fact extractor, a sentiment analyzer, and a summarization generator. These modules, guided by signatures and optimized by DSPy, would dynamically adapt to different articles and user preferences, creating personalized and informative summaries on the fly.\\
+\\
+This research explores how the DSPy framework can be used to build engaging AI agents for interactive domains, addressing the limitations of handcrafted prompts. We focus on three key areas:\\
+\begin{itemize}
+\item \textbf{Self-improvement mechanisms:} How do DSPy's self-improvement mechanisms enhance the user experience?
+
+\item \textbf{Personalization:} How can application-specific datasets be leveraged to personalize and optimize DSPy-driven language models?
+
+\item \textbf{Compilation and optimization:} How does DSPy's compilation and optimization process impact model performance and resource usage?
+\end{itemize}
+
+\section{Research Design and Methods}
+\begin{enumerate}
+    \item \textbf{Self-improvement mechanisms:}
+        \begin{itemize}
+            \item \textbf{Experiment design:} We will develop two interactive systems:
+                \begin{itemize}
+                    \item A baseline system using handcrafted prompts for responses and interactions.
+                    \item A DSPy-based system leveraging self-improvement mechanisms (e.g., reinforcement learning, error correction).
+                \end{itemize}
+            \item 
+
+            \item \textbf{Simulated interactions:} Create diverse simulated scenarios representing typical user interactions in your chosen domain.
+            
+            \item \textbf{Model evaluation:} Evaluate the performance of both systems on pre-defined metrics like task completion rate, response accuracy, and coherence as shown in Table \ref{model_eva}
+
+            \begin{center}
+                \label{model_eva}
+                \begin{tabular}{ |p{5cm}|p{2.5cm}|p{2.5cm}|  }
+                \hline \textbf{Metric} & \textbf{Baseline System} & \textbf{DSPy System}\\
+                \hline
+                Task completion rate (\%)&&\\
+                \hline
+                Dialogue coherence score&&\\
+                \hline
+                Response relevance score&&\\
+                 \hline
+                \end{tabular}
+            \end{center}
+            \\
+            \item \textbf{Analysis:} Compare the performance of both systems and analyze the impact of self-improvement mechanisms on key metrics.
+
+        \end{itemize}
+
+    \item \textbf{Personalization:}
+            \begin{itemize}
+                \item \textbf{Dataset selection:} Choose two application-specific domains and gather relevant publicly available datasets (e.g., dialogue logs, customer reviews).
+                \item \textbf{Model training:} Train DSPy models on general language data and then fine-tune them on the selected domain-specific datasets.
+                \item \textbf{Internal evaluation:} Analyze the performance of personalized models compared to non-personalized models using simulated interactions and pre-defined metrics (e.g., relevance, user satisfaction) as show in Table \ref{model_eva_pers}
+                \begin{center}
+                    \label{model_eva_pers}
+                    \begin{tabular}{ |p{4cm}|p{3cm}|p{3cm}|  }
+                    \hline \textbf{Metric} & \textbf{Non-personalized Model} & \textbf{Personalized Model}\\
+                    \hline
+                    Domain-specific accuracy (\%)&&\\
+                    \hline
+                    User satisfaction simulation score (1-5)&&\\
+                    \hline
+                    Expert evaluation score (1-5)&&\\
+                     \hline
+                    \end{tabular}
+                \end{center}
+            \end{itemize}
+
+    \item \textbf{Compilation and optimization:}
+            \begin{itemize}
+                \item \textbf{Benchmarking:} Benchmark DSPy-compiled models against other popular language model frameworks on performance and resource usage metrics using publicly available datasets and benchmarks as shown in Table \ref{model_eva_res}.
+
+                \begin{itemize}
+                    \item \textbf{Latency:} Measure the time it takes for the agent to generate a response after receiving a prompt.
+                    \item \textbf{Memory footprint:} Track the memory usage of the compiled model during simulated interactions.
+                \end{itemize}
+
+                \begin{center}
+                    \label{model_eva_res}
+                    \begin{tabular}{ |p{5cm}|p{2.5cm}|p{2.5cm}|  }
+                    \hline \textbf{Metric} & \textbf{Baseline System} & \textbf{DSPy System}\\
+                    \hline
+                    Latency (milliseconds)&&\\
+                    \hline
+                    Memory footprint (megabytes)&&\\
+                    \hline
+                    \end{tabular}
+                \end{center}
+                
+                \item \textbf{Code analysis:} Analyze the compiled code and optimization techniques used by DSPy to understand its performance and efficiency.
+
+                \item \textbf{Resource profiling:} Profile the resource usage of DSPy models during simulated interaction scenarios to identify potential bottlenecks.
+                
+                \item \textbf{Optimization strategies:} Explore further optimization techniques for DSPy (e.g., model pruning, quantization) and evaluate their impact on performance and resource usage using simulated interactions and benchmarks as shown in Table \ref{model_eva_opt}.
+
+                \begin{center}
+                    \label{model_eva_opt}
+                    \begin{tabular}{ |p{5cm}|p{5cm}|  }
+                    \hline \textbf{Technique} & \textbf{Impact} \\
+                    \hline
+                    Model pruning&\\
+                    \hline
+                    Compiler optimizations&\\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            \end{itemize}
+    \item \textbf{Ethical Considerations:}
+        \begin{itemize}
+            \item By using publicly available and ethically sourced datasets.
+            \item Taking necessary steps to mitigate potential biases in datasets and models through careful selection and processing techniques.
+            \item Ensure transparency and accountability in the research process.
+        \end{itemize}
+
+    \item \textbf{Evaluating Cost-Effectiveness:} Beyond upfront costs, we delve into the true cost-effectiveness of DSPy compared to manually crafted prompts for interactive AI agents as shown in the Table \ref{model_eva_cost}
+
+    \begin{itemize}
+        \item \textbf{Cost Calculation:} Estimate average token usage and OpenAI costs for both systems.
+        \item \textbf{Success Metric:} Define a relevant metric (e.g., task completion) to assess system effectiveness.
+        \item \textbf{Cost per Success:} Divide total cost by success rate for each system for a nuanced comparison.
+    \end{itemize}
+
+    \begin{center}
+        \label{model_eva_cost}
+        \begin{tabular}{ |p{5cm}|p{2.5cm}|p{2.5cm}|  }
+        \hline \textbf{Metric} & \textbf{Baseline System} & \textbf{DSPy System}\\
+        \hline
+        Prompt Tokens&&\\
+        \hline
+        Response Tokens&&\\
+        \hline
+        Cost per Interaction&&\\
+        \hline
+        Success Rate&&\\
+        \hline
+        Cost per Success&&\\
+        \hline
+        \end{tabular}
+    \end{center}
+\end{enumerate}

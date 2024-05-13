@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{blindtext}
+\usepackage[pdftex]{graphicx} %for embedding images
+\usepackage{url} %for proper url entries
+\usepackage{graphicx}
+\usepackage[belowskip=-15pt,aboveskip=0pt]{caption}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{footmisc}
+\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{booktabs}
+
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{library.bib}
+
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={<title>}, pdfauthor={<author's name here>}, pdfsubject={<subject here>}, pdfkeywords={<keywords here>}]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
+\renewcommand{\contentsname}{\centerline{\large TABLE OF CONTENTS}} 
+\begin{document}
+\tableofcontents
+\addcontentsline{toc}{chapter}{DEDICATION}
+\include{dedication}
+\addcontentsline{toc}{chapter}{ACKNOWLEDGEMENTS}
+\include{acknowledgements}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\include{abstract}
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\include{list_of_tables}
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\include{list_of_figures}
+\pagenumbering{roman} %numbering before main content starts
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+\pagestyle{fancy}
+\lhead{}
+%\lfoot{}
+%\cfoot{}
+\rhead{\footnotesize DSPy-powered Conversations: Building Engaging AI Agents}
+%\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}}
+%\rnewcommand{\headheight}{24pt}
+%\rnewcommand{\footrulewidth}{0.4pt}
+\input{./introduction.tex} %literature survey included in this
+
+\input{./aim&objective.tex}
+%\input{./design-methods.tex}
+\input{./research_methodology.tex}
+\input{./results.tex}
+\input{./testing-and-result.tex}
+\input{./ref.tex}
+\input{./appendix_a.tex}
+\input{./appendix_b.tex}
+%\backmatter % book mode only
+\end{document}
